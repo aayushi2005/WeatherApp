@@ -49,21 +49,22 @@ async function checkWeather(city){
     document.querySelector(".humidity").innerHTML = data.main.humidity + "%";
     document.querySelector(".wind").innerHTML = data.wind.speed + " km/h";
 
-    if(data.weather[0].main =="Clouds"){
-        weatherIcon.src = "images/clouds.png";
-    }
-    else if(data.weather[0].main =="Clear"){
-        weatherIcon.src = "images/clear.png";
-    }
-    else if(data.weather[0].main =="Rain"){
-        weatherIcon.src = "images/rain.png";
-    }
-    else if(data.weather[0].main =="Drizzle"){
-        weatherIcon.src = "images/drizzle.png";
-    }
-    else if(data.weather[0].main =="Mist"){
-        weatherIcon.src = "images/mist.png";
-    }
+   if (data.weather[0].main == "Clouds") {
+    weatherIcon.src = "https://openweathermap.org/img/wn/03d.png"; // Cloud icon
+} 
+else if (data.weather[0].main == "Clear") {
+    weatherIcon.src = "https://openweathermap.org/img/wn/01d.png"; // Clear sky icon
+} 
+else if (data.weather[0].main == "Rain") {
+    weatherIcon.src = "https://openweathermap.org/img/wn/09d.png"; // Rain icon
+} 
+else if (data.weather[0].main == "Drizzle") {
+    weatherIcon.src = "https://openweathermap.org/img/wn/10d.png"; // Drizzle icon
+} 
+else if (data.weather[0].main == "Mist") {
+    weatherIcon.src = "https://openweathermap.org/img/wn/50d.png"; // Mist icon
+}
+
     document.querySelector(".weather").style.display ="block";
 }
 
